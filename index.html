@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Replicant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <div class="logo">REPLICANT<span>von neumann probe</span></div>
+      <div class="tb-group" id="tb-date"></div>
+      <div class="tb-group speed" id="tb-speed"></div>
+      <div class="tb-group autopause" id="tb-auto"></div>
+      <div class="tb-group" id="tb-res"></div>
+      <div class="tb-group grow" id="tb-goal"></div>
+      <div class="tb-group" id="tb-buttons">
+        <button data-act="research" title="Research (R)">Research</button>
+        <button data-act="save" title="Save game">Save</button>
+        <button data-act="help" title="How to play (H)">?</button>
+      </div>
+    </header>
+    <main>
+      <aside id="left">
+        <section>
+          <h3>Replicants <span id="roster-count"></span><button class="mini" data-act="next-idle" title="Select next idle probe (Tab)">next idle</button></h3>
+          <div id="roster"></div>
+        </section>
+        <section>
+          <h3>Objectives</h3>
+          <div id="objectives"></div>
+        </section>
+      </aside>
+      <div id="mapwrap">
+        <canvas id="map"></canvas>
+        <div id="tooltip" hidden></div>
+        <div id="toasts"></div>
+        <div id="modehint" hidden></div>
+        <div id="legend">
+          <span><i class="lg probe"></i>busy</span><span><i class="lg idle"></i>idle</span>
+          <span><i class="lg hab"></i>habitable</span><span><i class="lg col"></i>colony</span>
+          <span><i class="lg foe"></i>hostile</span>
+          <span class="keys">drag pan &middot; wheel zoom &middot; right-click move &middot; space pause</span>
+        </div>
+      </div>
+      <aside id="right"><div id="panel"></div></aside>
+    </main>
+    <footer id="logwrap"><div id="log"></div></footer>
+  </div>
+  <div id="modal-root"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/galaxy.js"></script>
+  <script src="js/sim.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
